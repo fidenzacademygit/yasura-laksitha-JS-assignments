@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fe8b65f-b79f-408a-b8d5-df4694ecf7ae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assignment_3/WordedAmount.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment_3/WordedAmount.js" afterDir="false" />
-    </list>
+    <list default="true" id="3fe8b65f-b79f-408a-b8d5-df4694ecf7ae" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +82,7 @@
       <updated>1754543498749</updated>
       <workItem from="1754543500345" duration="3852000" />
       <workItem from="1754547424961" duration="1276000" />
-      <workItem from="1754548724339" duration="14088000" />
+      <workItem from="1754548724339" duration="14440000" />
     </task>
     <servers />
   </component>

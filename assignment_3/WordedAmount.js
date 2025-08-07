@@ -75,7 +75,7 @@ function wordedAmount(amount) {
     const dollerString = dollers + (dollers === 'one' ? " doller " : " dollers ");
     const centString = cents + (cents != '' ? cents === 'one' ? " cent " : " cents " : "");
 
-    const text =  dollerString + (centString != "" ? centString : "");
+    const text = dollerString + (centString != "" ? " and " + centString : "");
 
     return text.charAt(0).toUpperCase() + text.slice(1);
 }
