@@ -1,24 +1,25 @@
 function alphabetSoup(str) {
-    let charArray = str.split("");
-    //const sortedArray = charArray.sort();
+    if (!str) return "Invalid input"
 
-    for (let i = 0; i < str.length ; i++){
-        for (let j = 0; j < str.length; j++){
-            if (charArray[j] > charArray[j+1]){
+    let charArray = str.toLowerCase().split("");
+
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < str.length - 1; j++) {
+            if (charArray[j] > charArray[j + 1]) {
                 const temp = charArray[j];
-                charArray[j] = charArray[j+1];
-                charArray[j+1] = temp
+                charArray[j] = charArray[j + 1];
+                charArray[j + 1] = temp;
             }
         }
     }
 
-    document.getElementById('output').textContent = "Sorted: "+ charArray.join("");
+    return charArray.join("");
 }
 
-document.addEventListener("DOMContentLoaded", ()=> {
-    document.getElementById('submit-btn').addEventListener('click', ()=> {
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('submit-btn').addEventListener('click', () => {
         const input = document.getElementById('str-input').value;
-        alphabetSoup(input);
+        document.getElementById('output').textContent = alphabetSoup(input);
     })
 })
 
