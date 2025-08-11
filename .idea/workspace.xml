@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4bf3390c-2352-4526-b5ac-435479684d36" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment_2/IsPrime.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_2/IsPrime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment_3/WordedAmount.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_3/WordedAmount.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +18,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "#2 on feat/assignment-2",
+    "git-widget-placeholder": "#3 on feat/assignemnt-3",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
