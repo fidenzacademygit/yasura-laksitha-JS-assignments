@@ -9,11 +9,18 @@
 </head>
 <body>
 
-    <label for="scale-input" id="lbl-scale-input">Input Scale</label>
+    <label for="scale-input" id="lbl-scale-input">
+        Input Weights <br>
+        Example input format: "[3, 4]", "[1, 2, 7, 7]"<br>
+        Weight arrays should be separated by a comma. <br>
+        The First array represents current weights, and the second array represents weights that are available.
+    </label>
+    <br><br>
     <input type="text" id="scale-input">
+
     <button type="submit" id="btn-submit">Submit</button>
 
-    <h3 id="h3-current-state">Current scales</h3>
+    <h3 id="h3-current-state">Current Weights</h3>
     <p id="current-state"></p>
 
     <h3 id="h3-available-weights">Available Weights</h3>

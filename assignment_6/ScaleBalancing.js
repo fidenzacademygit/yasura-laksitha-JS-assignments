@@ -2,11 +2,11 @@ function scaleBalancing(strArr) {
     if (!isValidInput(strArr)) return;
 
     let result;
-    const scaleArray = extractScales(strArr);
+    const weightArray = extractWeights(strArr);
 
-    if (!isValidScale(scaleArray)) return;
+    if (!isValidWeights(weightArray)) return;
 
-    let {left, right} = getWeights(scaleArray[0][0], scaleArray[0][1], scaleArray[1]);
+    let {left, right} = getWeights(weightArray[0][0], weightArray[0][1], weightArray[1]);
 
     if (left.length === 0 && right.length === 0) {
         result = "Not possible";
@@ -20,8 +20,8 @@ function scaleBalancing(strArr) {
     }
 
     return {
-        current: scaleArray[0],
-        available: scaleArray[1],
+        current: weightArray[0],
+        available: weightArray[1],
         result: result
     };
 }
@@ -66,7 +66,7 @@ function getWeights(left, right, availableWeights) {
     return {left: [], right: []};
 }
 
-function extractScales(strArr) {
+function extractWeights(strArr) {
     strArr = strArr.replace(/"/g, "");
     const regex = /\[(.+?)]/g
     const matches = [...strArr.matchAll(regex)];
@@ -76,10 +76,10 @@ function extractScales(strArr) {
             .map(num => Number(num.trim())));
 }
 
-function isValidScale(scaleArray) {
-    if (scaleArray.length !== 2) return false;
+function isValidWeights(weightArray) {
+    if (weightArray.length !== 2) return false;
 
-    for (const array of scaleArray) {
+    for (const array of weightArray) {
         for (const ele of array) {
             if (Number.isNaN(ele)) return false
         }
