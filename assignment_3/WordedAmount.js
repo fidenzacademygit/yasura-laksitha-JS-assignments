@@ -1,8 +1,8 @@
 function wordedAmount(amount) {
     if (!isValidAmount(amount))
-        return "Invalid amount"
+        return "Invalid amount";
 
-    const onceWords = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+    const onceWords = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
         "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
     const tensWords = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 
@@ -60,7 +60,7 @@ function wordedAmount(amount) {
         const remainder = n % 1000;
 
         if (thousands > 0) {
-            words += convertHundreds(thousands) + " thousand ";
+            words += convertHundreds(thousands) + " thousand, ";
         }
 
         if (remainder > 0) {
@@ -77,7 +77,7 @@ function wordedAmount(amount) {
 
     const text = dollerString + (centString != "" ? " and " + centString : "");
 
-    return text.charAt(0).toUpperCase() + text.slice(1);
+    return text.charAt(0).toUpperCase() + text.slice(1) + ".";
 }
 
 function isValidAmount(amount) {
@@ -89,7 +89,6 @@ function isValidAmount(amount) {
     return value > 0 && value <= 999_999.00;
 }
 
-console.log(wordedAmount(14.7));
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn-submit').addEventListener('click', () => {
