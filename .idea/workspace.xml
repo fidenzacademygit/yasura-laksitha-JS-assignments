@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bf3390c-2352-4526-b5ac-435479684d36" name="Changes" comment="">
+    <list default="true" id="3fe8b65f-b79f-408a-b8d5-df4694ecf7ae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment_4/chessboardTraveling.html" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_4/chessboardTraveling.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment_5/MaximalSquare.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_5/MaximalSquare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment_5/maximalSquare.html" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_5/maximalSquare.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -34,26 +42,36 @@
   }
 }</component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="318LzqlScPpS52sEz3jZew68O5x" />
+  <component name="ProjectId" id="30wfLMlGkmgLtawCY89850BLq8W" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#4 on feat/assignment-4&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.AlphabetSoup.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.AlphabetSoup.js.executor": "Run",
+    "Node.js.ChessboardTraveling.js.executor": "Run",
+    "Node.js.IsPrime.js.executor": "Run",
+    "Node.js.MaximalSquare.js.executor": "Run",
+    "Node.js.WordedAmount.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "#5 on feat/assignment-5",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Assignments/Assignment2/yasura-laksitha-JS-assignments",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Console",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -63,13 +81,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4bf3390c-2352-4526-b5ac-435479684d36" name="Changes" comment="" />
-      <created>1754901018706</created>
+      <changelist id="3fe8b65f-b79f-408a-b8d5-df4694ecf7ae" name="Changes" comment="" />
+      <created>1754543498749</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1754901018706</updated>
-      <workItem from="1754901021458" duration="1346000" />
-      <workItem from="1754902390651" duration="334000" />
+      <updated>1754543498749</updated>
+      <workItem from="1754543500345" duration="3852000" />
+      <workItem from="1754547424961" duration="1276000" />
+      <workItem from="1754548724339" duration="17014000" />
+      <workItem from="1754579023801" duration="6088000" />
+      <workItem from="1754659290339" duration="405000" />
+      <workItem from="1754704122844" duration="18711000" />
     </task>
     <servers />
   </component>
