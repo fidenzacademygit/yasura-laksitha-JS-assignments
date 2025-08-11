@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fe8b65f-b79f-408a-b8d5-df4694ecf7ae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assignment_5/MaximalSquare.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment_5/maximalSquare.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment_5/MaximalSquare.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_5/MaximalSquare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment_5/maximalSquare.html" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_5/maximalSquare.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +60,7 @@
     "Node.js.WordedAmount.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feat/assignment-5",
+    "git-widget-placeholder": "#5 on feat/assignment-5",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Assignments/Assignment2/yasura-laksitha-JS-assignments",
     "node.js.detected.package.eslint": "true",

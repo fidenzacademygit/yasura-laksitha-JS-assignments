@@ -1,8 +1,10 @@
 function maximalSquare(strArr) {
-    if (!strArr) return;
+    if (!isValidInput(strArr)) return;
+
+    strArr = strArr.trim();
 
     const matrix = create2DMatrix(strArr);
-    if (!isValid(matrix)) return;
+    if (!isValidMatrix(matrix)) return;
 
     let maxValue = 0;
     const rows = matrix.length;
@@ -26,6 +28,11 @@ function maximalSquare(strArr) {
     };
 }
 
+function isValidInput(strArr) {
+    const regex = /^"([01]+)"(,"([01]+)")*$/;
+    return strArr && regex.test(strArr);
+}
+
 function print2DMatrix(arr) {
     let result = "";
 
@@ -43,18 +50,13 @@ function create2DMatrix(str) {
     return rows.map(row => row.split("").map(ele => Number(ele)));
 }
 
-function isValid(matrix) {
+function isValidMatrix(matrix) {
     if (matrix.length === 0) return false;
     const expectedArrayLength = matrix[0].length;
 
-    for (const array of matrix) {
+    for (const array of matrix)
         if (array.length !== expectedArrayLength) return false;
 
-        for (const value of array) {
-            if (typeof value != 'number') return false;
-            if (Number(value) !== 0 && Number(value) !== 1) return false;
-        }
-    }
     return true;
 }
 
