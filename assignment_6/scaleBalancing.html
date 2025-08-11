@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scale Balancing</title>
+
+    <script src="ScaleBalancing.js"></script>
+</head>
+<body>
+
+    <label for="scale-input" id="lbl-scale-input">
+        Input Weights <br>
+        Example input format: "[3, 4]", "[1, 2, 7, 7]"<br>
+        Weight arrays should be separated by a comma. <br>
+        The First array represents current weights, and the second array represents weights that are available.
+    </label>
+    <br><br>
+    <input type="text" id="scale-input">
+
+    <button type="submit" id="btn-submit">Submit</button>
+
+    <h3 id="h3-current-state">Current Weights</h3>
+    <p id="current-state"></p>
+
+    <h3 id="h3-available-weights">Available Weights</h3>
+    <p id="available-weights"></p>
+
+    <h3 id="h3-balanced-weights">Balanced Weights</h3>
+    <p id="balanced-weights"></p>
+
+</body>
+</html>

@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3fe8b65f-b79f-408a-b8d5-df4694ecf7ae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment_5/MaximalSquare.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_5/MaximalSquare.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment_5/maximalSquare.html" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_5/maximalSquare.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment_6/ScaleBalancing.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_6/ScaleBalancing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment_6/scaleBalancing.html" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_6/scaleBalancing.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,10 +57,11 @@
     "Node.js.ChessboardTraveling.js.executor": "Run",
     "Node.js.IsPrime.js.executor": "Run",
     "Node.js.MaximalSquare.js.executor": "Run",
+    "Node.js.ScaleBalancing.js.executor": "Run",
     "Node.js.WordedAmount.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#5 on feat/assignment-5",
+    "git-widget-placeholder": "#6 on feat/assignment-6",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Assignments/Assignment2/yasura-laksitha-JS-assignments",
     "node.js.detected.package.eslint": "true",
@@ -92,6 +93,9 @@
       <workItem from="1754579023801" duration="6088000" />
       <workItem from="1754659290339" duration="405000" />
       <workItem from="1754704122844" duration="18711000" />
+      <workItem from="1754743939137" duration="10472000" />
+      <workItem from="1754794443582" duration="7016000" />
+      <workItem from="1754835228743" duration="3615000" />
     </task>
     <servers />
   </component>
