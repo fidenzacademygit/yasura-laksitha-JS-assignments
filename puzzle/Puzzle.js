@@ -65,28 +65,28 @@ function shuffle() {
     const cols = 3;
     const rows = 3;
 
+    const tileArray = solvedPuzzleState.flat().filter(tile => tile !== null);
+
+    for (let i = 0; i < tileArray.length - 1; i++) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [tileArray[i], tileArray[j]] = [tileArray[j], tileArray[i]];
+    }
+
     const clonedPuzzle = Array.from({length: rows}, () => new Array(cols).fill(null));
-    const cellValueSet = new Set();
 
     const emptyRow = Math.floor(Math.random() * rows);
     const emptyCol = Math.floor(Math.random() * cols);
+    emptyPosition = {row: emptyRow, col: emptyCol};
+
+    let tileIndex = 0;
 
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
             if (i === emptyRow && j === emptyCol) {
                 clonedPuzzle[i][j] = null;
-                emptyPosition = {row: emptyRow, col: emptyCol};
-                continue;
+            } else {
+                clonedPuzzle[i][j] = tileArray[tileIndex++];
             }
-
-            let cellValue = `${Math.floor(Math.random() * rows)}-${Math.floor(Math.random() * cols)}`;
-
-            while (cellValueSet.has(cellValue)) {
-                cellValue = `${Math.floor(Math.random() * 3)}-${Math.floor(Math.random() * 3)}`;
-            }
-
-            clonedPuzzle[i][j] = cellValue;
-            cellValueSet.add(cellValue);
         }
     }
 
