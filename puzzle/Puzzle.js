@@ -4,12 +4,7 @@ const solvedPuzzleState = [
     ['2-0', '2-1', null],
 ];
 
-let currentPuzzleState = [
-    ['0-0', '0-1', '0-2'],
-    ['1-0', '1-1', '1-2'],
-    ['2-0', '2-1', null],
-];
-
+let currentPuzzleState = solvedPuzzleState;
 let emptyPosition = {row: 2, col: 2};
 
 function isNeighbour(clickedTile) {
@@ -30,7 +25,7 @@ function onTileClicked(tileId) {
         currentPuzzleState[clickedTile.row][clickedTile.col] = null;
         currentPuzzleState[emptyPosition.row][emptyPosition.col] = temp;
 
-        emptyPosition = {clickedTile};
+        emptyPosition = {row: clickedTile.row, col: clickedTile.col};
         renderPuzzle(currentPuzzleState);
     }
 }
@@ -49,15 +44,14 @@ function renderPuzzle(puzzleState) {
 
             div.setAttribute('data-row', i.toString());
             div.setAttribute('data-col', j.toString());
-            div.setAttribute('id', `slice-${cellValue}`)
 
             if (!cellValue) {
                 div.classList.add('empty');
-                emptyPosition = {row: i, col: j};
             } else {
                 const [row, col] = cellValue.split("-").map(Number);
                 const sliceNumber = row * 3 + col + 1;
 
+                div.setAttribute('id', `slice-${cellValue}`)
                 div.classList.add('image-slice', `slice-${sliceNumber}`);
                 div.addEventListener('click', () => onTileClicked(`slice-${cellValue}`));
             }
@@ -122,10 +116,9 @@ function isPuzzleSolvable(puzzleState) {
 }
 
 function isPuzzleSolved() {
-    const flatCurrentPuzzleStateStr = currentPuzzleState.flat().join(",");
-    const flatSolvedPuzzleStateStr = solvedPuzzleState.flat().join(",");
-
-    return flatSolvedPuzzleStateStr === flatCurrentPuzzleStateStr;
+    return currentPuzzleState.flat().every((value, index) =>
+        value === solvedPuzzleState.flat()[index]
+    );
 }
 
 document.addEventListener('DOMContentLoaded', () => {
