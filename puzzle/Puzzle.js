@@ -131,6 +131,11 @@ function isPuzzleSolved() {
 document.addEventListener('DOMContentLoaded', () => {
     renderPuzzle(solvedPuzzleState);
 
-    document.getElementById('btn-shuffle').addEventListener('click', () => shuffle())
-    document.getElementById('btn-check').addEventListener('click', () => isPuzzleSolved())
+    document.getElementById('btn-shuffle').addEventListener('click', () => shuffle());
+    document.getElementById('btn-check').addEventListener('click', () => {
+        const result = isPuzzleSolved();
+        const element = document.getElementById('state');
+
+        element.textContent = result ? "Puzzle Solved" : "Puzzle Unsolved";
+    });
 })
