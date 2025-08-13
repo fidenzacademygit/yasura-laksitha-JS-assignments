@@ -4,7 +4,7 @@ const solvedPuzzleState = [
     ['2-0', '2-1', null],
 ];
 
-let currentPuzzleState = solvedPuzzleState;
+let currentPuzzleState = solvedPuzzleState.map(row => [...row]);
 let emptyPosition = {row: 2, col: 2};
 
 function isNeighbour(clickedTile) {
@@ -128,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn-check').addEventListener('click', () => {
         const result = isPuzzleSolved();
         const element = document.getElementById('state');
-
         element.textContent = result ? "Puzzle Solved" : "Puzzle Unsolved";
     });
 })
