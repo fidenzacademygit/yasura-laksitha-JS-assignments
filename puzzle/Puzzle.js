@@ -67,7 +67,7 @@ function shuffle() {
 
     const tileArray = solvedPuzzleState.flat().filter(tile => tile !== null);
 
-    for (let i = 0; i < tileArray.length - 1; i++) {
+    for (let i = tileArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [tileArray[i], tileArray[j]] = [tileArray[j], tileArray[i]];
     }
