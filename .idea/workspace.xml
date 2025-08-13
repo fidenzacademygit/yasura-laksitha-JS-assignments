@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fe8b65f-b79f-408a-b8d5-df4694ecf7ae" name="Changes" comment="">
+    <list default="true" id="3fe8b65f-b79f-408a-b8d5-df4694ecf7ae" name="Changes" comment="Resolved requested&#10; - define COLS and ROW in a single place.&#10; - remove the puzzle solved message at the beginning of the gameplay.&#10; - Store current state comparison is a const.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle/Puzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle/Puzzle.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,30 +47,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.AlphabetSoup.html.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.AlphabetSoup.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.ChessboardTraveling.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.IsPrime.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.MaximalSquare.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.ScaleBalancing.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.WordedAmount.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/puzzle&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Assignments/Assignment2/yasura-laksitha-JS-assignments/puzzle/img&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Console&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.AlphabetSoup.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.AlphabetSoup.js.executor": "Run",
+    "Node.js.ChessboardTraveling.js.executor": "Run",
+    "Node.js.IsPrime.js.executor": "Run",
+    "Node.js.MaximalSquare.js.executor": "Run",
+    "Node.js.ScaleBalancing.js.executor": "Run",
+    "Node.js.WordedAmount.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "feat/puzzle",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Assignments/Assignment2/yasura-laksitha-JS-assignments/puzzle/img",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Console",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Assignments\Assignment2\yasura-laksitha-JS-assignments\puzzle\img" />
@@ -103,11 +103,33 @@
       <workItem from="1755008204219" duration="5455000" />
       <workItem from="1755013739181" duration="2931000" />
       <workItem from="1755052930869" duration="9780000" />
-      <workItem from="1755063086346" duration="7440000" />
+      <workItem from="1755063086346" duration="13231000" />
     </task>
+    <task id="LOCAL-00001" summary="display alert box if the puzzle is solved">
+      <option name="closed" value="true" />
+      <created>1755074947335</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755074947335</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Resolved requested&#10; - define COLS and ROW in a single place.&#10; - remove the puzzle solved message at the beginning of the gameplay.&#10; - Store current state comparison is a const.">
+      <option name="closed" value="true" />
+      <created>1755077780068</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755077780068</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="display alert box if the puzzle is solved" />
+    <MESSAGE value="Resolved requested&#10; - define COLS and ROW in a single place.&#10; - remove the puzzle solved message at the beginning of the gameplay.&#10; - Store current state comparison is a const." />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolved requested&#10; - define COLS and ROW in a single place.&#10; - remove the puzzle solved message at the beginning of the gameplay.&#10; - Store current state comparison is a const." />
   </component>
 </project>

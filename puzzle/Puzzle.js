@@ -3,6 +3,8 @@ const solvedPuzzleState = [
     ['1-0', '1-1', '1-2'],
     ['2-0', '2-1', null],
 ];
+const ROWS = 3;
+const COLS = 3;
 
 let currentPuzzleState = solvedPuzzleState.map(row => [...row]);
 let emptyPosition = {row: 2, col: 2};
@@ -24,9 +26,13 @@ function onTileClicked(tileId) {
     }
 
     if (isNeighbour(clickedTile)) {
-        const temp = currentPuzzleState[clickedTile.row][clickedTile.col];
-        currentPuzzleState[clickedTile.row][clickedTile.col] = null;
-        currentPuzzleState[emptyPosition.row][emptyPosition.col] = temp;
+        [
+            currentPuzzleState[clickedTile.row][clickedTile.col],
+            currentPuzzleState[emptyPosition.row][emptyPosition.col]
+        ] = [
+            currentPuzzleState[emptyPosition.row][emptyPosition.col],
+            currentPuzzleState[clickedTile.row][clickedTile.col],
+        ]
 
         emptyPosition = {row: clickedTile.row, col: clickedTile.col};
         renderPuzzle(currentPuzzleState);
@@ -37,11 +43,8 @@ function renderPuzzle(puzzleState) {
     const imageContainer = document.querySelector('.image-container');
     imageContainer.innerHTML = "";
 
-    const rows = 3;
-    const cols = 3;
-
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
+    for (let i = 0; i < ROWS; i++) {
+        for (let j = 0; j < COLS; j++) {
             const div = document.createElement('div');
             const cellValue = puzzleState[i][j];
 
@@ -66,9 +69,6 @@ function renderPuzzle(puzzleState) {
 }
 
 function shuffle() {
-    const cols = 3;
-    const rows = 3;
-
     const tileArray = solvedPuzzleState.flat().filter(tile => tile !== null);
 
     for (let i = tileArray.length - 1; i > 0; i--) {
@@ -76,16 +76,16 @@ function shuffle() {
         [tileArray[i], tileArray[j]] = [tileArray[j], tileArray[i]];
     }
 
-    const clonedPuzzle = Array.from({length: rows}, () => new Array(cols).fill(null));
+    const clonedPuzzle = Array.from({length: ROWS}, () => new Array(COLS).fill(null));
 
-    const emptyRow = Math.floor(Math.random() * rows);
-    const emptyCol = Math.floor(Math.random() * cols);
+    const emptyRow = Math.floor(Math.random() * ROWS);
+    const emptyCol = Math.floor(Math.random() * COLS);
     emptyPosition = {row: emptyRow, col: emptyCol};
 
     let tileIndex = 0;
 
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
+    for (let i = 0; i < ROWS; i++) {
+        for (let j = 0; j < COLS; j++) {
             if (i === emptyRow && j === emptyCol) {
                 clonedPuzzle[i][j] = null;
             } else {
@@ -120,22 +120,25 @@ function isPuzzleSolvable(puzzleState) {
 }
 
 function setPuzzleSolvedState() {
-    if (currentPuzzleState.flat().every((value, index) =>
-        value === solvedPuzzleState.flat()[index]
-    )) {
-        if (!isInitState)
+    const isSolved = currentPuzzleState.flat().every((value, index) => value === solvedPuzzleState.flat()[index])
+
+    if (isSolved) {
+        if (!isInitState) {
             setTimeout(() => {
                 alert("Puzzle solved");
                 document.getElementById('state').textContent = "Puzzle Solved"
             }, 500);
-
+        } else {
+            document.getElementById('state').textContent = "Solve the Puzzle"
+        }
+        return true;
     }
+
     document.getElementById('state').textContent = "Puzzle not Solved"
+    return false;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     renderPuzzle(solvedPuzzleState);
-    document.getElementById('state').textContent = "Puzzle Solved"
-
     document.getElementById('btn-shuffle').addEventListener('click', () => shuffle());
 })
