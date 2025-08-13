@@ -6,6 +6,7 @@ const solvedPuzzleState = [
 
 let currentPuzzleState = solvedPuzzleState.map(row => [...row]);
 let emptyPosition = {row: 2, col: 2};
+let isInitState = true;
 
 function isNeighbour(clickedTile) {
     const {row, col} = clickedTile;
@@ -14,6 +15,8 @@ function isNeighbour(clickedTile) {
 }
 
 function onTileClicked(tileId) {
+    if (isInitState) isInitState = false;
+
     const tile = document.getElementById(tileId);
     const clickedTile = {
         row: parseInt(tile.getAttribute('data-row')),
@@ -59,6 +62,7 @@ function renderPuzzle(puzzleState) {
             imageContainer.appendChild(div);
         }
     }
+    setPuzzleSolvedState();
 }
 
 function shuffle() {
@@ -115,19 +119,23 @@ function isPuzzleSolvable(puzzleState) {
     return inversionCount % 2 === 0;
 }
 
-function isPuzzleSolved() {
-    return currentPuzzleState.flat().every((value, index) =>
+function setPuzzleSolvedState() {
+    if (currentPuzzleState.flat().every((value, index) =>
         value === solvedPuzzleState.flat()[index]
-    );
+    )) {
+        if (!isInitState)
+            setTimeout(() => {
+                alert("Puzzle solved");
+                document.getElementById('state').textContent = "Puzzle Solved"
+            }, 500);
+
+    }
+    document.getElementById('state').textContent = "Puzzle not Solved"
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     renderPuzzle(solvedPuzzleState);
+    document.getElementById('state').textContent = "Puzzle Solved"
 
     document.getElementById('btn-shuffle').addEventListener('click', () => shuffle());
-    document.getElementById('btn-check').addEventListener('click', () => {
-        const result = isPuzzleSolved();
-        const element = document.getElementById('state');
-        element.textContent = result ? "Puzzle Solved" : "Puzzle Unsolved";
-    });
 })
