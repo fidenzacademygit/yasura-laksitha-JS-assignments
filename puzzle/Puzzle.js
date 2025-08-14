@@ -49,6 +49,7 @@ function isNeighbour(clickedTile) {
 }
 
 function onTileClicked(tileId) {
+    if (!tileId) return;
     console.info("TileId found in onTileClicked method ", tileId);
 
     if (isInitState) isInitState = false;
