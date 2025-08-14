@@ -42,42 +42,37 @@ function findEmptyPosition() {
     }
 }
 
-function isNeighbour(clickedTile) {
-    const {row, col} = clickedTile;
-    return row === emptyPosition.row && Math.abs(col - emptyPosition.col) === 1 ||
-        col === emptyPosition.col && Math.abs(row - emptyPosition.row) === 1
-}
+function swapElements(event) {
+    isInitState = false;
+    event.preventDefault();
 
-function onTileClicked(tileId) {
-    console.info("TileId found in onTileClicked method ", tileId);
+    const dragElement = document.querySelector("[data-dragging=true]");
+    const dragRow = parseInt(dragElement.dataset.row);
+    const dragCol = parseInt(dragElement.dataset.col);
 
-    if (isInitState) isInitState = false;
-    const prevEmptyPosition = {...emptyPosition};
+    const dropElement = event.target.closest('div');
+    const dropRow = parseInt(dropElement.dataset.row);
+    const dropCol = parseInt(dropElement.dataset.col);
 
-    const tile = document.getElementById(tileId);
-    const clickedTile = {
-        row: parseInt(tile.getAttribute('data-row')),
-        col: parseInt(tile.getAttribute('data-col')),
-    }
+    console.log("Attempting swap:", {
+        dragRow, dragCol,
+        dropRow, dropCol,
+        emptyPosition
+    });
 
-    if (isNeighbour(clickedTile)) {
-        [
-            currentPuzzleState[clickedTile.row][clickedTile.col],
-            currentPuzzleState[emptyPosition.row][emptyPosition.col]
-        ] = [
-            currentPuzzleState[emptyPosition.row][emptyPosition.col],
-            currentPuzzleState[clickedTile.row][clickedTile.col],
-        ]
-        emptyPosition = {row: clickedTile.row, col: clickedTile.col};
+    [
+        currentPuzzleState[dragRow][dragCol],
+        currentPuzzleState[dropRow][dropCol]
+    ] = [
+        currentPuzzleState[dropRow][dropCol],
+        currentPuzzleState[dragRow][dragCol]
+    ];
 
-        console.info("Move:", {
-            clickedTile,
-            from: {...prevEmptyPosition},
-            to: {row: clickedTile.row, col: clickedTile.col}
-        });
+    emptyPosition = {row: dragRow, col: dragCol};
 
-        renderPuzzle(currentPuzzleState);
-    }
+    dragElement.removeAttribute("data-dragging");
+    event.dataTransfer.clearData();
+    renderPuzzle(currentPuzzleState);
 }
 
 function renderPuzzle(puzzleState) {
@@ -93,17 +88,23 @@ function renderPuzzle(puzzleState) {
 
             div.setAttribute('data-row', i.toString());
             div.setAttribute('data-col', j.toString());
+            div.setAttribute('draggable', 'true');
 
             if (!cellValue) {
                 div.classList.add('empty');
+                div.setAttribute('id', `empty-${i}-${j}`);
+                div.addEventListener('dragover', (event) => event.preventDefault());
+                div.addEventListener('drop', (event) => swapElements(event));
+
             } else {
                 const [row, col] = cellValue.split("-").map(Number);
 
                 div.setAttribute('id', `slice-${cellValue}`);
                 div.classList.add('image-slice');
                 div.style.backgroundPosition = `${-col * TILE_SIZE}px ${-row * TILE_SIZE}px`;
-
-                div.addEventListener('click', () => onTileClicked(`slice-${cellValue}`));
+                div.addEventListener('dragstart', () => {
+                    div.setAttribute("data-dragging", "true");
+                });
             }
             imageContainer.appendChild(div);
         }
@@ -112,10 +113,9 @@ function renderPuzzle(puzzleState) {
     setPuzzleSolvedState();
 }
 
-function shuffle(attempt = 1) {
+function shuffle() {
     isInitState = false;
 
-    console.info("Shuffle attempt ", attempt)
     const tileArray = solvedPuzzleState.flat().filter(tile => tile !== null);
 
     for (let i = tileArray.length - 1; i > 0; i--) {
@@ -136,45 +136,15 @@ function shuffle(attempt = 1) {
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
             if (i === emptyRow && j === emptyCol) {
-                clonedPuzzle[i][j] = null;
+                clonedPuzzle[i][j] = null
             } else {
                 clonedPuzzle[i][j] = tileArray[tileIndex++];
             }
         }
     }
-
-    if (isPuzzleSolvable(clonedPuzzle)) {
-        currentPuzzleState = clonedPuzzle;
-        console.info("Puzzle is solvable. Shuffle finished");
-
-        renderPuzzle(currentPuzzleState);
-    } else {
-        console.info("Puzzle is not solvable. Retrying...");
-        shuffle(attempt + 1);
-    }
-}
-
-function isPuzzleSolvable(puzzleState) {
-    const flatPuzzle = puzzleState.flat().filter(str => str !== null);
-    let inversionCount = 0;
-
-    const tileNumbers = flatPuzzle.map(cellValue => {
-        const [row, col] = cellValue.trim().split("-").map(Number);
-        return row * size + col + 1;
-    })
-
-    for (let i = 0; i < tileNumbers.length - 1; i++) {
-        for (let j = i + 1; j < tileNumbers.length; j++)
-            if (tileNumbers[i] > tileNumbers[j]) inversionCount++;
-    }
-
-    if (size % 2 !== 0) return inversionCount % 2 === 0;
-
-    const emptyRowFromBottom = size - 1 - findEmptyPosition().row;
-
-    return emptyRowFromBottom % 2 === 0 ?
-        inversionCount % 2 === 1 :
-        inversionCount % 2 === 0;
+    currentPuzzleState = clonedPuzzle;
+    console.info("Shuffled Successfully");
+    renderPuzzle(currentPuzzleState);
 }
 
 function setPuzzleSolvedState() {
@@ -203,8 +173,8 @@ function setPuzzleSolvedState() {
     }
 
     if (!isInitState) console.info("Puzzle not solved yet");
-
     document.getElementById('state').textContent = "Puzzle not Solved";
+
     return false;
 }
 
@@ -249,5 +219,4 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     document.getElementById('btn-reset').addEventListener('click', () => reset());
-
 })

@@ -23,6 +23,5 @@
 .empty {
     width: var(--tile-size);
     height: var(--tile-size);
-    visibility: hidden;
-    pointer-events: none;
+    pointer-events: auto;
 }
