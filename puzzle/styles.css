@@ -1,0 +1,28 @@
+:root {
+    --tile-size: 100px;
+    --image-size: 300px;
+    --image-container-width: 310px;
+}
+
+.image-container {
+    display: flex;
+    width: var(--image-container-width);
+    flex-wrap: wrap;
+}
+
+.image-slice {
+    background-image: url("./img/flower.png");
+    width: var(--tile-size, 100px);
+    height: var(--tile-size, 100px);
+    border: 1px solid white;
+    background-size: var(--image-size, 300px);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.empty {
+    width: var(--tile-size);
+    height: var(--tile-size);
+    visibility: hidden;
+    pointer-events: none;
+}
