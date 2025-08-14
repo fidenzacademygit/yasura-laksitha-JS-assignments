@@ -11,7 +11,17 @@
 <body>
     <div class="image-container"></div>
     <br>
+
+    <label for="puzzle-type">Select puzzle type</label>
+    <select name="select-puzzle-type" id="puzzle-type">
+        <option value="3" selected>3 x 3</option>
+        <option value="4">4 x 4</option>
+        <option value="5">5 x 5</option>
+    </select>
+    <br><br>
+
     <button type="button" id="btn-shuffle">Shuffle</button>
+    <button type="reset" id="btn-reset">Reset</button>
 
     <h3 id="state">Puzzle State:</h3>
 

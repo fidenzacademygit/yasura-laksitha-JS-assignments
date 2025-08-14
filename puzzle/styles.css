@@ -1,54 +1,23 @@
 :root {
     --tile-size: 100px;
     --image-size: 300px;
+    --image-container-width: 310px;
 }
 
 .image-container {
     display: flex;
-    width: 310px;
+    width: var(--image-container-width);
     flex-wrap: wrap;
 }
 
 .image-slice {
     background-image: url("./img/flower.png");
-    width: var(--tile-size);
-    height: var(--tile-size);
+    width: var(--tile-size, 100px);
+    height: var(--tile-size, 100px);
     border: 1px solid white;
-    background-size: var(--image-size);
+    background-size: var(--image-size, 300px);
     background-repeat: no-repeat;
     cursor: pointer;
-}
-
-.slice-1 {
-    background-position: 0 0;
-}
-
-.slice-2 {
-    background-position: calc(-1 * var(--tile-size)) 0;
-}
-
-.slice-3 {
-    background-position: calc(-2 * var(--tile-size)) 0;
-}
-
-.slice-4 {
-    background-position: 0 calc(-1 * var(--tile-size));
-}
-
-.slice-5 {
-    background-position: calc(-1 * var(--tile-size)) calc(-1 * var(--tile-size));
-}
-
-.slice-6 {
-    background-position: calc(-2 * var(--tile-size)) calc(-1 * var(--tile-size));
-}
-
-.slice-7 {
-    background-position: 0 calc(-2 * var(--tile-size));
-}
-
-.slice-8 {
-    background-position: calc(-1 * var(--tile-size)) calc(-2 * var(--tile-size));
 }
 
 .empty {
