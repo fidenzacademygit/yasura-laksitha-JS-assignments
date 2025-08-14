@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fe8b65f-b79f-408a-b8d5-df4694ecf7ae" name="Changes" comment="">
+    <list default="true" id="3fe8b65f-b79f-408a-b8d5-df4694ecf7ae" name="Changes" comment="Resolved requested&#10; - define COLS and ROW in a single place.&#10; - remove the puzzle solved message at the beginning of the gameplay.&#10; - Store current state comparison is a const.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment_6/ScaleBalancing.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_6/ScaleBalancing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment_6/scaleBalancing.html" beforeDir="false" afterPath="$PROJECT_DIR$/assignment_6/scaleBalancing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle/Puzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle/Puzzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle/puzzle.html" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle/puzzle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puzzle/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +42,10 @@
     &quot;accountId&quot;: &quot;969a12f0-4cc1-46f8-81f7-d1acae3baea3&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -61,9 +66,11 @@
     "Node.js.WordedAmount.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#6 on feat/assignment-6",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "feat/grag-and-drop",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Assignments/Assignment2/yasura-laksitha-JS-assignments",
+    "js.last.introduce.type": "CONST",
+    "last_opened_file_path": "D:/Assignments/Assignment2/yasura-laksitha-JS-assignments/puzzle/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,6 +80,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Assignments\Assignment2\yasura-laksitha-JS-assignments\puzzle\img" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -96,10 +108,38 @@
       <workItem from="1754743939137" duration="10472000" />
       <workItem from="1754794443582" duration="7016000" />
       <workItem from="1754835228743" duration="3615000" />
+      <workItem from="1755008204219" duration="5455000" />
+      <workItem from="1755013739181" duration="2931000" />
+      <workItem from="1755052930869" duration="9780000" />
+      <workItem from="1755063086346" duration="14043000" />
+      <workItem from="1755078779781" duration="7912000" />
+      <workItem from="1755094591515" duration="5399000" />
     </task>
+    <task id="LOCAL-00001" summary="display alert box if the puzzle is solved">
+      <option name="closed" value="true" />
+      <created>1755074947335</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755074947335</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Resolved requested&#10; - define COLS and ROW in a single place.&#10; - remove the puzzle solved message at the beginning of the gameplay.&#10; - Store current state comparison is a const.">
+      <option name="closed" value="true" />
+      <created>1755077780068</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755077780068</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="display alert box if the puzzle is solved" />
+    <MESSAGE value="Resolved requested&#10; - define COLS and ROW in a single place.&#10; - remove the puzzle solved message at the beginning of the gameplay.&#10; - Store current state comparison is a const." />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolved requested&#10; - define COLS and ROW in a single place.&#10; - remove the puzzle solved message at the beginning of the gameplay.&#10; - Store current state comparison is a const." />
   </component>
 </project>
